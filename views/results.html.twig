@@ -6,7 +6,12 @@
 </head>
 <body>
     <div class="container">
-        
+        {% if results is not empty %}
+            <h1>Here are your matches!</h1>
+            {% for word in results %}
+                <p>{{ word }}</p>
+            {% endfor %}
+        {% endif %}
     </div>
 </body>
 </html>

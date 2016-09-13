@@ -3,22 +3,24 @@
     class Anagram
     {
 
-        function anagramCheck($input1, $input_array)
+        function anagramCheck($input, $input_array)
         {
-            $input1 = str_split($input1);
-            $input1 = sort($input1);
+
+
+            $filter_user_word = str_split(strtolower($input));
+            sort($filter_user_word);
             $matching_words = array();
 
             foreach($input_array as $word) {
-                $word = str_split($word);
-                $word = sort($word);
-                if ($input1 == $word) {
+                $filter_word = str_split(strtolower($word));
+                sort($filter_word);
+                if ($filter_user_word == $filter_word) {
                     array_push($matching_words, $word);
-                    return "Match!";
                 } else {
                     return "This is not an anagram.";
                 }
             }
+            return $matching_words;
         }
     }
 

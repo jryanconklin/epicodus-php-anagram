@@ -5,19 +5,19 @@
         function test_anagramCheck_two_words()
         {
             $wordCheck = new Anagram;
-            $input1 = "toenail";
-            $input_array = array("otarine");
-            $output = $wordCheck->anagramCheck($input1, $input_array);
-            $this->assertEquals("Match!", $output);
+            $input = "beard";
+            $input_array = array("bread");
+            $output = $wordCheck->anagramCheck($input, $input_array);
+            $this->assertEquals(array("bread"), $output);
         }
 
         function test_anagramCheck_multiple_words()
         {
             $wordCheck = new Anagram;
-            $input1 = "toenail";
-            $input_array = array("otarine", "etaerio", "aneroid", "elation");
-            $output = $wordCheck->anagramCheck($input1, $input_array);
-            $this->assertEquals("Match!", $output);
+            $input = "beard";
+            $input_array = array("bread", "beard");
+            $output = $wordCheck->anagramCheck($input, $input_array);
+            $this->assertEquals(array("bread", "beard"), $output);
         }
 
     }
